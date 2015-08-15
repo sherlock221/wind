@@ -6,7 +6,7 @@
   "author" : "sherlock221b",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaywcjlove/wcj.git"
+    "url": "https://github.com/sherlock221/wind.git"
   },
   "dependencies": {
     "commander": ">= 2.8.1",
