@@ -11,17 +11,11 @@ var router = express.Router();
  * 起风了
  */
 router.get("/index",function(req,res){
-    var cateLogId = 0;
-    res.render("movie/index",{
-        cateLogId : cateLogId
-    });
+    res.render("movie/index");
 });
 
 router.get("/detail",function(req,res){
-    var cateLogId = 0;
-    res.render("movie/detail", {
-        cateLogId: cateLogId
-    } );
+    res.render("movie/detail" );
 });
 
 

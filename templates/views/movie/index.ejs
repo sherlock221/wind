@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh-cn">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta content="
-        width=device-width,
-        initial-scale=1.0,
-        minimum-scale=1.0,
-        maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="renderer" content="webkit">
+
+    <!-- meta -->
+    <%- include(rootView+'/common/meta')  %>
+
     <title>起风了-唯有独立生存</title>
 
     <!-- header -->
-    <%- include  ../common/header.ejs %>
+    <%- include(rootView+'/common/header')  %>
 
     <!-- 相关业务 -->
-    <link rel="stylesheet" href="/cmw/movie/css/movie.css">
-    <script type="text/javascript" src="/cmw/movie/js/movie.js"></script>
-
+    <link rel="stylesheet" href="<%=rootPath%>/movie/css/movie.css">
+    <script type="text/javascript" src="<%=rootPath%>/movie/js/movie.js"></script>
 
 </head>
 <body>
 
 
-        <section>
-            起风了唯有努力生存!!!
+
+        <section class="abs_center">
+
+                <h5 class="title">
+                    Wind
+                </h5>
+                <p class="tag">
+                    起风了 --- 唯有努力生存.
+                </p>
+                <a href="detail" class="enter">
+                    立即进入
+                </a>
+
         </section>
 
 
-
         <!-- footer -->
-        <%- include  ../common/footer.ejs %>
+        <%- include(rootView+'/common/footer')  %>
 </body>
 </html>

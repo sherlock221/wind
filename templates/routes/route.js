@@ -11,7 +11,7 @@ var  routes =
     }
 
 var init  = function(app){
-    console.log("初始化路由!");
+    console.log("初始化路由....");
     for(var r  in routes){
         app.use(r,routes[r]);
     }

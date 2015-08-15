@@ -1,11 +1,4 @@
 <!-- common -->
-<link rel="stylesheet" href="/cmw/lib/css/base/module.css"/>
-
-<!-- 引入seajs -->
-<script type="text/javascript" src="/cmw/lib/js/seajs/sea.js" id="seajsnode"></script>
-<script type="text/javascript" src="/cmw/lib/seajs_config.js"></script>
-
-<!-- base -->
-<script type="text/javascript" src="/cmw/dist/template/mb_base.min.js?v=100"></script>
-<script type="text/javascript">seajs.use(["$_zepto","$_hammer"],function($,$_hammer){  $_hammer($); window.$ = $; });
-</script>
+<link rel="stylesheet" href="<%=rootPath%>/lib/module.css"/>
+<link rel="stylesheet" href="<%=rootPath%>/lib/cartoon.min.css"/>
+<script src="<%=rootPath%>/lib/jquery.1.9.min.js"></script>
