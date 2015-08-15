@@ -1,5 +1,5 @@
 {
-  "name": "wind",
+  "name": "wind-startup",
   "version": "1.0.0",
   "description" : "is Fast build Front and rear decoupling  node  project startup",
   "bin": { "wind": "bin/wind" },
