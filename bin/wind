@@ -8,9 +8,9 @@ var appInfo = require('../package.json');
 var fs = require('fs-extra');
 var color = require("colors");
 
+
 var templatsDir   =  path.join(__dirname, '..', 'templates', "");
 var appName;
-
 
 //主命令
 program
@@ -25,6 +25,8 @@ program.parse(process.argv);
 
 
 
+
+
 //创建项目
 createProject();
 
@@ -32,48 +34,50 @@ createProject();
 
 function createProject (){
 
+
     // Path
     var destinationPath = program.args.shift() || '.';
 
-    // 项目名称
-    var appName;
     if(destinationPath == ".")
         appName = "./";
     else
-        appName =path.basename(path.resolve(destinationPath))+"/";
-
+        appName =path.basename(path.resolve(destinationPath));
 
     console.log("init commander....".rainbow);
+    console.log(color.yellow("appName: "+appName));
+
     console.log(color.yellow("path   : "+templatsDir,"  to  "+appName));
 
     if(program.type && program.type == "spa"){
         console.log("create : spa init...".cyan);
         //初始化spa应用
-        spaInstall();
+        spaInstall("spa");
     }
     //默认
     else{
         console.log("create : dynamic init...".cyan);
         //初始化dynamic应用
-        //dynamicInstall();
+        dynamicInstall("dynamic");
     }
+
+
 
 }
 
 
-function dynamicInstall (){
-
-    fs.copy(templatsDir,appName, function (err) {
+function dynamicInstall (type){
+    fs.copy(templatsDir+"/"+type,appName+"/", function (err) {
         if (err)  throw  err;
-        console.log("create : init package.json...".cyan);
         updateProject();
     })
 }
 
-function spaInstall (){
+function spaInstall (type){
+    fs.copy(templatsDir+"/"+type,appName+"/", function (err) {
+        if (err)  throw  err;
 
-    console.log("success: project create success...".cyan);
-    console.log("end    : Please enter the project and (npm install && npm start) to launch your project...".cyan);
+        console.log("success: spa project create success...".cyan);
+    })
 }
 
 
@@ -111,11 +115,12 @@ function updateProject (){
     if(program.author)
         packageJson.author =  program.author;
 
-    write(appName+'package.json', JSON.stringify(packageJson,null,2));
+    write(appName+"/"+'package.json', JSON.stringify(packageJson,null,2));
 
 
     console.log("success: project create success...".cyan);
     console.log("end    : Please enter the project and (npm install && npm start) to launch your project...".cyan);
+    console.log("end    : then visit http://localhost:3001/wind/movie/index ".yellow);
 }
 
 
@@ -134,7 +139,7 @@ function loadTemplate(name) {
 
 function write(path, str, mode) {
     fs.writeFileSync(path, str, { mode: mode || 0666 });
-    console.log('   \x1b[36mcreate\x1b[0m : ' + path+"...");
+    console.log(color.cyan("create : "+path));
 }
 
 

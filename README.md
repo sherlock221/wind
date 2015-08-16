@@ -78,6 +78,7 @@ heavy 适合团队前端较多
 ## 启动项目
 
     $ npm start
+    打开浏览器访问  http://localhost:3001/wind/movie/index  
    
 
 ## 命令参数
