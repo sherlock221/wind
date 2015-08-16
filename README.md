@@ -1,5 +1,10 @@
 # wind-startup
-前后端解耦 快速启动项目  采用node进行 页面路由控制
+前后端解耦 快速启动项目. 
+这是一个基础的前后端解耦 启动项目 它具有以下功能:
+ 
+1. 
+
+
 
 
 
@@ -13,14 +18,22 @@
 
     $ wind movie 
  
+## 安装依赖
+
+    $ cd movie && npm install
+
 ## 启动项目
 
-    $ cd movie && npm start
-
+    $ npm start
+   
 
 ## 命令参数
 
     -h, --help          output usage information
     -V, --version       output the version number
     -d  --description   项目描述
-    -ar, --author        作者
+    -ar,--author        作者
+    -t, --type          类型 [sap , dynamic] 默认dynamic
+    
+    
+

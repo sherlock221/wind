@@ -5,38 +5,76 @@
 var program  = require("commander");
 var path = require('path');
 var appInfo = require('../package.json');
-var fs = require('fs-extra')
+var fs = require('fs-extra');
+var color = require("colors");
 
 var templatsDir   =  path.join(__dirname, '..', 'templates', "");
 var appName;
 
 
+//主命令
 program
     .version(appInfo.version)
     .usage('[options] [dir]')
     .option('-d, --desc <dec>', '项目介绍')
     .option('-ar, --author <author>', '项目作者')
-    .parse(process.argv);
+    .option('-t, --type <type>', '项目类型 [spa , dynamic] 默认dynamic')
 
 
-// Path
-var destinationPath = program.args.shift() || '.';
-
-// 项目名称
-var appName;
-if(destinationPath == ".")
-    appName = "./";
-else
-    appName =path.basename(path.resolve(destinationPath))+"/";
+program.parse(process.argv);
 
 
-console.log('   \x1b[36mpath\x1b[0m : ' + templatsDir,"  to  "+appName);
 
-fs.copy(templatsDir,appName, function (err) {
-    if (err)  throw  err;
-    console.log('   \x1b[36mcreate\x1b[0m : ' + "project...");
-    updateProject();
-})
+//创建项目
+createProject();
+
+
+
+function createProject (){
+
+    // Path
+    var destinationPath = program.args.shift() || '.';
+
+    // 项目名称
+    var appName;
+    if(destinationPath == ".")
+        appName = "./";
+    else
+        appName =path.basename(path.resolve(destinationPath))+"/";
+
+
+    console.log("init commander....".rainbow);
+    console.log(color.yellow("path   : "+templatsDir,"  to  "+appName));
+
+    if(program.type && program.type == "spa"){
+        console.log("create : spa init...".cyan);
+        //初始化spa应用
+        spaInstall();
+    }
+    //默认
+    else{
+        console.log("create : dynamic init...".cyan);
+        //初始化dynamic应用
+        //dynamicInstall();
+    }
+
+}
+
+
+function dynamicInstall (){
+
+    fs.copy(templatsDir,appName, function (err) {
+        if (err)  throw  err;
+        console.log("create : init package.json...".cyan);
+        updateProject();
+    })
+}
+
+function spaInstall (){
+
+    console.log("success: project create success...".cyan);
+    console.log("end    : Please enter the project and (npm install && npm start) to launch your project...".cyan);
+}
 
 
 function updateProject (){
@@ -76,8 +114,11 @@ function updateProject (){
     write(appName+'package.json', JSON.stringify(packageJson,null,2));
 
 
-    console.log('   \x1b[36msuccess\x1b[0m: '+"project create success...");
+    console.log("success: project create success...".cyan);
+    console.log("end    : Please enter the project and (npm install && npm start) to launch your project...".cyan);
 }
+
+
 
 
 function loadTemplate(name) {
