@@ -1,9 +1,9 @@
 {
-  "name": "wind",
-  "version": "1.0.0",
+  "name": "wind-startup",
+  "version": "1.1.0",
   "description" : "is Fast build Front and rear decoupling  node  project startup",
   "bin": { "wind": "bin/wind" },
-  "author" : "sherlock221b",
+  "author" : "sherlock_wind",
   "repository": {
     "type": "git",
     "url": "https://github.com/sherlock221/wind.git"

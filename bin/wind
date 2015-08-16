@@ -30,6 +30,8 @@ else
     appName =path.basename(path.resolve(destinationPath))+"/";
 
 
+console.log('   \x1b[36mpath\x1b[0m : ' + templatsDir,"  to  "+appName);
+
 fs.copy(templatsDir,appName, function (err) {
     if (err)  throw  err;
     console.log('   \x1b[36mcreate\x1b[0m : ' + "project...");
