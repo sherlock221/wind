@@ -1,6 +1,6 @@
 {
   "name": "wind-startup",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description" : "is Fast build Front and rear decoupling  node  project startup",
   "bin": { "wind": "bin/wind" },
   "author" : "sherlock_wind",
