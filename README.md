@@ -72,9 +72,9 @@ heavy 适合团队前端较多
 
 	wind testSpa -t spa
    
-## 启动xiangm(spa)
-
-   $ 在webstorm中打开testSpa项目 点击index.html来启动
+## 启动项目(spa)
+	
+	在webstorm中打开testSpa项目 点击index.html来启动
    
 
 ## 快速开始(Dynamic)
