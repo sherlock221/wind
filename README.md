@@ -67,18 +67,28 @@ heavy 适合团队前端较多
 
     $ npm install -g wind-startup
 
-## 快速开始
+
+## 快速开始(spa)
+
+   $ wind testSpa -t spa
+   
+## 启动xiangm(spa)
+
+   $ 在webstorm中打开testSpa项目 点击index.html来启动
+   
+
+## 快速开始(Dynamic)
 
   cd 进入你的工作目录 , 输入项目名称 即可快速创建项目(默认是dynamic)
 
     $ wind movie 
  
-## 安装依赖
+## 安装依赖(Dynamic)
 
     $ cd movie && npm install
 
-## 启动项目
-
+## 启动项目(Dynamic)
+	
     $ npm start
     打开浏览器访问  http://localhost:3001/wind/movie/index  
    
