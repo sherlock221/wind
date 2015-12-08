@@ -70,7 +70,7 @@ heavy 适合团队前端较多
 
 ## 快速开始(spa)
 
-   $ wind testSpa -t spa
+	wind testSpa -t spa
    
 ## 启动xiangm(spa)
 
