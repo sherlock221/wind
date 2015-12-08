@@ -1,6 +1,8 @@
 # wind-startup
  前后端解耦 快速启动项目. 		 前后端解耦 快速启动项目. 
 
+   ![image](http://upload-images.jianshu.io/upload_images/326507-636c79b490629a95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 	 
 ## 为什么要解耦
 一条原则  专业人做专业事情 提升效率
@@ -88,5 +90,7 @@ heavy 适合团队前端较多
     -d  --description   项目描述
     -ar,--author        作者
     -t, --type          类型 [sap , dynamic] 默认dynamic
+    
+ 
     
     
